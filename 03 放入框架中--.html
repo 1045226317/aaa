@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <script src='js/template.js'></script>
+    <script src='js/xxquery.js'></script>
+</head>
+
+<body>
+<div id='mydiv'>
+</div>
+</body>
+</html>
+
+<!--模板王者演示-->
+<script id="mymodel" type="text/html">
+	<h1>产品名称:{{name}}</h1><br>
+    <b style='color:black;text-decoration:through'>原价：{{normalPrice}}</b><br>
+    <b style='color:red;'>团购价:{{groupPrice}}</b><br>
+    <b>描述：</b>{{des}}
+</script><script>
+
+    //标准json定义-- 必须有标题，必须有双引号
+    var product = {
+        name: "iPhone7 Plus",
+        normalPrice: 6000,
+        groupPrice: 1280,
+		des:"天上掉下来的馅饼，统统都是陷阱"
+    };
+    $$.BindTemplate(product,'mydiv','mymodel')
+	$$.$id('mydiv').style='background:#09c;'
+</script>
